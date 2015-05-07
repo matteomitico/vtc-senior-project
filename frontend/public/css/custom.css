@@ -1,0 +1,40 @@
+.vm-table{
+	color:#000;
+	background: #fff;
+}
+#banner{
+	height: 391px;
+	/*position: relative;*/
+}
+#main{
+	position: relative;
+	background: rgba(0,0,0, .75);
+	min-height: 400px;
+}
+.home #main{
+	position: inherit;
+	background: rgba(0,0,0,0);
+	min-height: 0;
+}
+#banner img{
+	z-index: -5;
+}
+.wrapper, #main .content{
+	width: 100%;
+}
+/*div#banner-bg {
+height: 391px;
+background: rgba(52, 52, 52, 0.9);
+z-index: -2;
+position: absolute;
+width: 100%;
+}
+
+#main{
+	position: relative;
+}
+
+#banner img {
+position: absolute;
+z-index: -5;
+}*/

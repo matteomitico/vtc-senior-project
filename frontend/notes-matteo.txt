@@ -1,0 +1,56 @@
+//matteo-notes
+
+.htaccess on the server:
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /cluster/frontend/site/public
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+
+added isotop.js to filter out the posts
+
+.htaccess on the xampp
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+The images don't load: permission denied: images need to have execution permission
+
+1) get internet configuration: /sbin/ifconfig -a 
+
+2) change the ssh connection to debian: app/config/remote.php
+   fix the debian env at app/bootstrap/start.php
+
+3) run vbphpadmin: change the ip in ~/runvboxwebsrv and run it
+ change the phpvirtualbox../config.php
+
+4) change the ip address in ~/cluster/python-scripts/add_vm.py
+
+add new vm: 
+    get the source files from sourceforge.net/projects/turnkeylinux/files/ovf (for wheezy, 32(i386))
+    extract it and run it
+        get error reguarding line 47: open in the editor and remve that section, delete the sum file in that folder
+    run the ovf file, rename the "vm" name, change the network to NAT 
+    export to the ~/cluste/VMs/ folder
+    add the new vm to ~/cluster/python-scripts/add_vm.py
+    add to add app/Controllers/VMController.php
+
+
+ftp: 72.71.226.48:21
+matteo: and the password
+

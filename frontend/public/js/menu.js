@@ -1,0 +1,1 @@
+$(document).ready(function(){ 	var pull 	= $('#pull');	menu 		= $('#nav, #cbp-spmenu-s1');	menuHeight	= menu.height();	$(pull).on('click', function(e) {		e.preventDefault();		menu.slideToggle(e);	});	$(window).resize(function(){		var w = $(window).width();		if(w > 564 && menu.is(':hidden')) {			menu.removeAttr('style');		}	});});

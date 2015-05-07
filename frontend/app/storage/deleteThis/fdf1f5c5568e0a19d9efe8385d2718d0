@@ -1,0 +1,19 @@
+	<a href="#" id="pull">Menu</a>
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+		<ul>
+			<li class="list-0"><span id="showLeft">menu <?php echo HTML::image('images/menu-icon.png', '', array('width' => '24', 'height' => "18")); ?> </span></li>
+			<li class="list-1"><a href="index.html">home <img src="images/home-icon.png" width="22" height="21" alt="" /></a></li>
+			<li class="list-2 current"><a href="about-us.html">about us <img src="images/about-icon.png" width="24" height="23" alt="" /></a></li>
+			<li class="list-3"><a href="services.html">services <img src="images/services-icon.png" width="25" height="24" alt="" /></a></li>
+			<li class="list-4"><a href="blog.html">blog <img src="images/blog-icon.png" width="21" height="21" alt="" /></a></li>
+			<li class="list-5"><a href="portfolio.html">portfolio <img src="images/portfolio-icon.png" width="24" height="24" alt="" /></a></li>
+			<li class="list-6"><a href="contact-us.php">contact us <img src="images/contact-us-icon.png" width="27" height="18" alt="" /></a></li>
+		</ul>
+	</nav>
+	
+	<header id="header">
+		<!--h1 class="site-title"><a href="index.html"><img src="../../images/logo.png" width="158" height="46" alt="ULIULI LOGO" /></a></h1-->
+	</header><!-- header -->
+	<div id="banner">
+		<img src="images/about-us-img.jpg" width="1430" height="385" alt="" />
+	</div>

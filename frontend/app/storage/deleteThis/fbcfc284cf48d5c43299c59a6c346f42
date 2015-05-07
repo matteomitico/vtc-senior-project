@@ -1,0 +1,12 @@
+
+<title>ULIULI</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+<link rel="stylesheet" type="text/css" href="<?php echo asset('css/style.css'); ?>" />
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="<?php echo asset('js/jquery.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('js/script.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('js/menu.js'); ?>"></script>
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="<?php echo asset('js/html5.js'); ?>"></script>
+<![endif]-->

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <?php echo $__env->make('includes.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</head>
+<body class="TODO:name of the page">
+    <div id="wrapper" class="container">
+
+        <header class="row header">
+            <?php echo $__env->make('includes.body_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </header>
+
+        <div id="main" class="clearfix row content">
+
+                <?php echo $__env->yieldContent('content'); ?>
+
+        </div><!--main-->
+
+        <footer id="footer" class="row footer">
+            <?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </footer>
+
+    <div><!--wrapper-->
+    <?php echo $__env->make('includes.body_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+</html>
