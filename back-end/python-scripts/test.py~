@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+#create virtual machine from the repository 
+# arg1 = vmType
+#arg2 = vmName
+
+import virtualbox
+ 
+vbox = virtualbox.VirtualBox()
+ 
+# Create new IAppliance and read the exported machine
+# called 'ubuntu'.
+appliance = vbox.create_appliance()
+appliance.read("./VMs/nodejs/nodejs-13.0-amd64/nodejs-13.0-amd64.ovf")
+#p1.wait_for_completion()
+ 
+# Extract the IVirtualSystemDescription object 
+# for 'ubuntu' and set its name to 'foobar' and cpu '2'.
+desc = appliance.find_description('vm')
+desc.set_name('foobar')
+desc.set_cpu('2')
+ 
+# perform import
+p = appliance.import_machines()
+p.wait_for_completion()
+
+#vbox = virtualbox.VirtualBox()
+print("VM(s):\n + %s" % "\n + ".join([vm.name for vm in vbox.machines]))
