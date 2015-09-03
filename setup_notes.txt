@@ -1,0 +1,66 @@
+This project consists of two parts: back-end and front-end
+Copy the contents of Senior-Project/front-end folder into root of public http folder on the server.
+The main application is loacted in .../front-end/public/
+The admin application is located in /url-to/front-end/phpvirtualbox-4.1-11 (username: admin, password: admin)
+
+move or copy back-end/python-sripts into ~/cluster/pyhton-scripts,
+create ~/cluster/VMs folder, this is where all the VM template live. If you change these locations, search and replace the path to these folders on the application to match with the new location.
+
+Follow this steps to setup the IP address:
+1) get internet configuration: /sbin/ifconfig -a 
+
+2) change the ssh connection in debian section of .../front-end/app/config/remote.php
+   fix the debian env in .../front-end/app/bootstrap/start.php
+   Note: debian is only a name, it doesn't matter what linux you run
+
+3) to run vbphpadmin (the admin part of the project), change the ip address in ~/runvboxwebsrv to match with your ip. them run this file
+go to front-end/phpvirtualbox-4.1-11/config.php and change the line 
+var $location = 'http://155.42.97.220:18083/'; with your IP (the port remains the same)
+
+4) change the ip address in ~/cluster/python-scripts/add_vm.py
+
+done.
+
+Set the .htaccess in your serve for pretty url
+here are some example, change them as you need:
+
+.htaccess on the server:
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /cluster/frontend/site/public
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+
+.htaccess on the xampp
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+to Add new VM to the list of the VMs:
+add new vm: 
+    get the source files from sourceforge.net/projects/turnkeylinux/files/ovf (for wheezy, 32(i386))
+    extract it and run it
+        get error reguarding line 47: open in the editor and remve that section, delete the sum file in that folder
+    run the ovf file, rename the "vm" name, change the network to NAT 
+    export to the ~/cluste/VMs/ folder
+    add the new vm to ~/cluster/python-scripts/add_vm.py
+    add to add app/Controllers/VMController.php
+
+If the images don't load: permission denied: images need to have execution permission
+
+
